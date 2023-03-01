@@ -3,7 +3,7 @@ import { userss ,  posts} from "./bds.js"
 
 
 // Selectores
-
+const tablon = document.getElementById('bodyt');
 const formHtml = document.getElementById('form')
 const selector = document.getElementById('selectUsers');
 const publis = document.getElementById('resulP')
@@ -54,8 +54,12 @@ class Publicaciones {
 }
 
 
+
+
 const usu = new Users();
 const publi = new Publicaciones();
+
+const save = document.getElementById('guarda');
 
 
 class Inter {
@@ -71,12 +75,31 @@ class Inter {
             usernameI.value = us.username;
             emailI.value = us.email;
             webpageI.value =  us.website;
-            // age.value = us.age;
+            age.value = us.age;
         }
 
+        Array.from(formHtml.elements).forEach(formElement => formElement.disabled = true );
 
     }
 
+    tablaUser(){
+        let tabla = usu.listar();
+        tablon.innerHTML = '';
+        tabla.forEach(user => {
+            
+            tablon.innerHTML += `
+            <tr>
+                <td>${user.name}</td>
+                <td>${user.username}</td>
+                <td>${user.website}</td>
+                <td>${user.email}</td>
+                <td>${user.age}</td>
+            </tr>
+            `
+            console.log("entreetabae")
+            
+        })
+    }
 
 
     mostrarUSelector() {
@@ -104,29 +127,20 @@ class Inter {
                 <br>
             `
         })
-    }     
+    }
 }
 
 
 const grafico = new Inter;
-// grafico.publicaciones()
-grafico.mostrarUSelector()
+
+grafico.tablaUser();
+grafico.mostrarUSelector();
 
 let id;
 
 class Form {
 
     submit(e) {
-        console.log(e)
-        e.preventDefault();
-
-        if(!id) {
-            usu.listar().forEach( user => {
-                id = user.id
-            })
-        }
-
-        id++
 
         const username =  usernameI.value
         const name = nameI.value
@@ -134,7 +148,7 @@ class Form {
         const website = webpageI.value
         const age = ageI.value
 
-        const data = {
+        const dataObj = {
             id,
             username,
             name,
@@ -143,10 +157,12 @@ class Form {
             age
         }
 
-        usu.agregar(data)
+        usu.agregar(dataObj)
+        console.log(agregar())
         console.log(data)
         console.log(usu.listar())
         grafico.listar()
+
 
     }
 }
@@ -164,15 +180,30 @@ function changes() {
         grafico.publicaciones(e.target.value)
     })
 
+    save.addEventListener('click', function(e) {
+        e.preventDefault()
+        const username =  usernameI.value
+        const name = nameI.value
+        const email = emailI.value
+        const website = webpageI.value
+        const age = ageI.value
+
+        const dataObj = {
+            username,
+            name,
+            email,
+            website,
+            age
+        }
+        console.log(usu.listar())
+        usu.agregar(dataObj)
+        usu.listar();
+        grafico.tablaUser();
+    })
 }
 
 
 
+
+
 changes()
-
-
-
-
-
-
-
