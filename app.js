@@ -45,38 +45,13 @@ class Publicaciones {
 
 
     obtenerPorUsuario(userId) {
-        this.publicar = posts;
         return this.publicar.filter(
-            (posts) => userId ==  posts.userId
+            (post) => userId ==  post.userId
         );
     }
 
-    search(userId) {
-        return this.publicar.filter((posts) => posts.userId == userId)
-    }
-
-    obtenerPorId(id) {
-
-        console.log(this.publicar)
-        return this.publicar.find(
-            (publicacion) => publicacion.id === id
-        );
-    }
+    
 }
-
-// class Publicaciones {
-//     constructor() {
-//       this.publicar = posts;
-//     }
-  
-//     obtenerPorUsuario(userId) {
-//       return this.publicar.filter((posts) => userId === posts.userId);
-//     }
-  
-//     search(userId) {
-//       return this.publicar.filter((posts) => userId === posts.userId);
-//     }
-//   }
 
 
 const usu = new Users();
@@ -123,31 +98,13 @@ class Inter {
         console.log(publiUs)
         
         publiUs.forEach(posts => {
-            publis.innerHTML += `<div> Titulo ${posts.title}
-                ${posts.body}
+            publis.innerHTML += `<div> <b>Titulo:</b> ${posts.title} 
+            <b>Publicación:</b> ${posts.body}
                 </div>
+                <br>
             `
         })
-    }
-
-    // publicaciones(userId) {
-    //     console.log("holaaa");
-    //     const publis = document.getElementById("publis");
-    //     let publiUs = publi.filter((post) => post.userId === userId);
-    //     console.log(publiUs);
-      
-    //     publis.innerHTML = "";
-      
-    //     publiUs.forEach((post) => {
-    //       publis.innerHTML += `
-    //         <div>
-    //           <h2>${post.title}</h2>
-    //           <p>${post.body}</p>
-    //         </div>
-    //       `;
-    //     });
-    //   }
-      
+    }     
 }
 
 
@@ -204,7 +161,6 @@ function changes() {
 
     selector.addEventListener('change', function(e) {
         grafico.rellenaInputs(e.target.value)
-        console.log("Hola owen")
         grafico.publicaciones(e.target.value)
     })
 
