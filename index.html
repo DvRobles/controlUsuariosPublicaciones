@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquetacion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.24/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="titulo">
+    <h1>Control de usuarios y publicaciones</h1>
+</header>
+        <!-- <section> -->
+            <!-- <form action=""> -->
+                
+            <div class="uk-margin">
+                
+                <label class="uk-form-label" for="form-horizontal-select" style="font-size: xx-large;">Users</label> <br>
+                <div class="uk-form-controls">
+                    <select id="selectUsers" class="uk-select" class="uk-form-icon" uk-icon="icon: users">
+                        <option value="">Select User</option>
+                    </select>
+                </div>
+            </div>
+            <!-- </form> -->
+        <!-- </section> <br> -->
+    <form action="" id="form">
+        <label for="">
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: users"></span>
+                    <input id="u-Name" class="uk-input" type="text" aria-label="Not clickable icon" placeholder="UserName">
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    <input id="name" class="uk-input" type="text" aria-label="Not clickable icon" placeholder="Name">
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <a class="uk-form-icon uk-form-icon" href="#" uk-icon="icon: mail"></a>
+                    <input id="email" class="uk-input" type="email" aria-label="Clickable icon" placeholder="E-m@ail">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <a class="uk-form-icon uk-form-icon" href="#" uk-icon="icon: link"></a>
+                    <input id="wp"class="uk-input" type="url" aria-label="Clickable icon" placeholder="WebPage">
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: calendar"></span>
+                    <input id="age" class="uk-input" type="number" aria-label="Not clickable icon" placeholder="Age">
+                </div>
+            </div>
+        </label>
+        <div class="uk-button-group">
+            <button class="uk-button uk-button-primary">Save</button>
+            <button class="uk-button uk-button-danger">Cancel</button>
+        </div>
+    </form><br>
+    <h1 style="color: #222;">Publicaciones</h1>
+    <div id="resulP"></div>
+</div>
+    <footer>
+<p>Creado Por: <br>
+        -Santana Robles David Alejandro 4° - i
+</p>
+    </footer>
+    <script type="module" src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.24/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.24/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>
